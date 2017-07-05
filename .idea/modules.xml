@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/idGen-client/idGen-client.iml" filepath="$PROJECT_DIR$/idGen-client/idGen-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/idGen-parent.iml" filepath="$PROJECT_DIR$/idGen-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/idGen-service/idGen-service.iml" filepath="$PROJECT_DIR$/idGen-service/idGen-service.iml" />
     </modules>
   </component>
 </project>

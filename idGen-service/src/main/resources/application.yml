@@ -1,0 +1,32 @@
+spring:
+    profiles: dev
+server:
+   port: 8080
+zk:
+  url: zk.dev.pajkdc.com:2181,zk2.dev.pajkdc.com:2181,zk3.dev.pajkdc.com:2181
+root:
+  path: /locks
+seq:
+  path: /seq
+---
+spring:
+    profiles: test
+server:
+   port: 80
+zk:
+  url: zk1.test.pajkdc.com:2181,zk2.test.pajkdc.com:2181,zk3.test.pajkdc.com:2181
+root:
+  path: /locks
+seq:
+  path: /seq
+---
+spring:
+    profiles: prod
+server:
+   port: 80
+zk:
+  url: idgen-zk1.pajkdc.com:2181,idgen-zk2.pajkdc.com:2181,idgen-zk3.pajkdc.com:2181
+root:
+  path: /locks
+seq:
+  path: /seq

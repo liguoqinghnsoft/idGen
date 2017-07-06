@@ -11,5 +11,13 @@
 
     <artifactId>idGen-service</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.idgen.distribute</groupId>
+            <artifactId>idGen-client</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 
 </project>

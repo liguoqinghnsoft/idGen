@@ -21,11 +21,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="idGen-parent" />
+        <module name="idGen-client" />
+        <module name="idGen-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="idGen-parent" target="1.5" />
+      <module name="idGen-client" target="1.8" />
+      <module name="idGen-parent" target="1.8" />
+      <module name="idGen-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

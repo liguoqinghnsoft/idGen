@@ -16,7 +16,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * Created by liguoqing on 2017/7/5.
  */
-@Service("idGeneratorService")
+@Service("zkIdGeneratorService")
 public class ZkIdGeneratorServiceImpl implements IdGeneratorService, Watcher {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ZkIdGeneratorServiceImpl.class);
@@ -33,12 +33,12 @@ public class ZkIdGeneratorServiceImpl implements IdGeneratorService, Watcher {
     private String seq;
 
     //³¬Ê±Ê±¼ä
-    private int sessionTimeout = 300000;
+    private int sessionTimeout = 3000;
 
     private CountDownLatch latch = new CountDownLatch(1);
 
     public void process(WatchedEvent watchedEvent) {
-        if(Event.KeeperState.SyncConnected == watchedEvent.getState()){
+        if (Event.KeeperState.SyncConnected == watchedEvent.getState()) {
             latch.countDown();
         }
     }
@@ -108,12 +108,12 @@ public class ZkIdGeneratorServiceImpl implements IdGeneratorService, Watcher {
 
     private String getId(String start) {
         Long id = Long.valueOf(start).longValue() + 1L;
-        if (start.endsWith("909")) {
-            id += 9090L;
-        }
-        if (start.endsWith("9")) {
-            id += 90L;
-        }
+//        if (start.endsWith("909")) {
+//            id += 9090L;
+//        }
+//        if (start.endsWith("9")) {
+//            id += 90L;
+//        }
         return String.valueOf(id);
     }
 }

@@ -16,9 +16,10 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <zk.version>3.4.0</zk.version>
+        <zk.version>3.4.5</zk.version>
         <commons.lang3.version>3.0</commons.lang3.version>
         <commons.collections.version>3.2.1</commons.collections.version>
+        <netflix.curator.framework.version>1.3.3</netflix.curator.framework.version>
     </properties>
 
     <parent>
@@ -64,6 +65,17 @@
             <artifactId>commons-collections</artifactId>
             <version>${commons.collections.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.netflix.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>${netflix.curator.framework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>${netflix.curator.framework.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

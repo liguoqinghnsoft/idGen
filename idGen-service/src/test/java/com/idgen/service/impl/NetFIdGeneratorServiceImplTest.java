@@ -14,14 +14,14 @@ import java.util.stream.Stream;
  */
 @ActiveProfiles("dev")
 @EnableAutoConfiguration
-public class ZkIdGeneratorServiceImplTest extends BaseTest {
+public class NetFIdGeneratorServiceImplTest extends BaseTest {
 
-    @Resource(name = "zkIdGeneratorService")
-    private IdGeneratorService zkIdGeneratorService;
+    @Resource(name = "netFIdGeneratorService")
+    private IdGeneratorService netFIdGeneratorService;
 
     @Test
     public void getNextIdTest() {
-        String ids = zkIdGeneratorService.getNextId("elise", "center-code", 10);
+        String ids = netFIdGeneratorService.getNextId("elise", "center-code", 10);
         if (StringUtils.isNotEmpty(ids)) {
             Stream.of(ids.split(",")).forEach(id -> {
                 System.out.println("id->" + id);
@@ -50,7 +50,7 @@ public class ZkIdGeneratorServiceImplTest extends BaseTest {
 
         @Override
         public void run() {
-            String ids = zkIdGeneratorService.getNextId("elise", "center-code", 10);
+            String ids = netFIdGeneratorService.getNextId("elise", "center-code", 10);
             if (StringUtils.isNotEmpty(ids)) {
                 Stream.of(ids.split(",")).forEach(id -> {
                     System.out.println(idx + "<-id->" + id);

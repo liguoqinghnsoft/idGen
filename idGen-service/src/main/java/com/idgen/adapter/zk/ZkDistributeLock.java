@@ -29,6 +29,9 @@ public class ZkDistributeLock implements Lock, Watcher {
     //锁根目录
     private String roots;
 
+    //Zk地址
+    private String ZkUrl;
+
     //等待节点
     private String waitNode;
 
@@ -38,7 +41,7 @@ public class ZkDistributeLock implements Lock, Watcher {
     private ZooKeeper zooKeeper;
 
     //超时时间
-    private int sessionTimeout = 300000;
+    private int sessionTimeout = 3000;
 
     //计数器
     private CountDownLatch latch = new CountDownLatch(1);
@@ -50,6 +53,7 @@ public class ZkDistributeLock implements Lock, Watcher {
     public ZkDistributeLock(String ZkURL, String root, String lock) {
         this.lockName = lock;
         this.roots = root;
+        this.ZkUrl = ZkURL;
         try {
             //创建zk链接
             zooKeeper = new ZooKeeper(ZkURL, sessionTimeout, this);
